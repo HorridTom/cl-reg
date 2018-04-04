@@ -36,3 +36,4 @@ vignettes/*.pdf
 /data-raw/*.xls*
 /data-raw/*.csv
 
+.Rproj.user
