@@ -6,7 +6,7 @@
 #' \describe{
 #'   \item{firstname}{first name of the registrant, chr}
 #'   \item{lastname}{last name of registrant, chr}
-#'   \item{nhs provider: acute services}{organisation of registrant: which NWL acute service provider, chr}
+#'   \item{nhs provider: acute services}{organisation of registrant: which NWL acute service provider, factor}
 #'   \item{nhs provider: community}{organisation of registrant: which NWL community provider, chr}
 #'   \item{nhs provider: mental health}{organisation of registrant: which NWL mental health provider, chr}
 #'   \item{nhs commissioners}{organisation of registrant: which NWL NHS commissioner, chr}
