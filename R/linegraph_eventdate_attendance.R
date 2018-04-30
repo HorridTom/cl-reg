@@ -6,8 +6,13 @@
 #Registration counts can be clarified using this code: "table(REG_data$cleventdate)"
 
 library("tidyverse")
-ggplot(REG_data,aes( x = as.character(cleventdate), group = 1))
-  + geom_line(stat = "count")
-  + xlab("CL Event Date")
-  + ylab("Number of attendees")
-  + ggtitle("Line graph of number of attendances for each CL Event")
+# df= dataframe containing teh data to be plotted
+# event_date = column containing number of attendances for each event
+plot_reg_no <- function(df, event_date = 'cleventdate') {
+  reg_no <- ggplot(REG_data,aes( x = as.character(cleventdate), group = 1)) + 
+  geom_line(stat = "count") + 
+  xlab("CL Event Date") + 
+  ylab("Number of attendees") + 
+  ggtitle("Line graph of number of attendances for each CL Event")
+  reg_no
+}
