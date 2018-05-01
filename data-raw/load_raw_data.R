@@ -20,9 +20,14 @@ filenames<-Sys.glob("data-raw/REG_Report_*.xlsx")
 library(readxl)
 
 #create load_REG_files function to load files into R (fn=filenames, fne=fnelement)
-load_REG_files<-function(fn)
-{lapply(fn,function(fne)
-{read_excel(fne,sheet="Delegate_Details",skip=1)})}
+load_REG_files<-function(fn) {
+  lapply(fn, function(fne) {
+      loaded_data <- read_excel(fne, sheet="Delegate_Details", skip=1)
+      data_with_date <- create_date_col(fileName = fne, df = loaded_data)
+      data_with_date
+    }
+  )
+}
 
 #apply function "load_REG-files" to values "filenames" and assigned to "data_frame"
 data_frames<-load_REG_files(filenames)
