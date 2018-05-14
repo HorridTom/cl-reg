@@ -1,0 +1,62 @@
+---
+title: "Collaborative Learning Event Feedback Report"
+author: "NIHR CLAHRC NWL Coding Club"
+date: "14 May 2018"
+output:
+  beamer_presentation: default
+  slidy_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+<!--# Registration analysis -->
+
+## Number of registrations over time
+
+*SPC chart showing how many people registered for each event over time*
+
+## Registrations by host organisation
+
+*Visualisation of distribution of host organisations of those registered*
+
+## Registrations by role
+
+*Visualisation of distribution of roles of those registered*
+
+## Registrations by CLAHRC theme
+
+*Visualisation of distribution of themes those registered identified with*
+
+<!--# Attendance analysis
+*Note: cannot do this section from data imported to date* -->
+
+## CL Event Attendance
+
+## CL Event Attendance and feedback response rates
+
+## CL Event feedback response rates
+
+## What primary perspective or background are you bringing to this event? (feedback forms)
+
+## Which of the following are you involved with? (Please select all that apply)
+
+## How long have you been involved with CLAHRC NWL?
+
+## Please rate how useful you found the event as a whole
+
+## Usefulness over CLAHRC 2
+
+## Highlights
+
+*This slide to be manually edited for each event*
+
+## Wordles
+
+## Quotes
+
+## What could have been better?
+
+## *More quotes to finish*
+
