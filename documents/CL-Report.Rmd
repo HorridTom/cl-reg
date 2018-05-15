@@ -8,7 +8,20 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      message = FALSE)
+```
+
+```{r}
+source('../R/clean-reg-data.R')
+source('../data-raw/load_raw_data.R')
+source('../R/merge_dataframes.R')
+source('../R/linegraph_eventdate_attendance.R')
+filenames<-Sys.glob("../data-raw/REG_Report_*.xlsx")
+data_frames <- load_REG_files(filenames)
+merged_datatable<-rbindlist(data_frames)
+#str(merged_datatable)
 ```
 
 <!--# Registration analysis -->
@@ -16,6 +29,13 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Number of registrations over time
 
 *SPC chart showing how many people registered for each event over time*
+
+
+```{r reg_graph, results='asis', fig.height=5, fig.width=7}
+plot_reg_no(df = merged_datatable)
+```
+
+
 
 ## Registrations by host organisation
 
