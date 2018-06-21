@@ -1,3 +1,6 @@
+#this code expects merged_datatable, a dataframe whose rows correspond to event registration
+#with column names as per data.R
+
 #Creating column to registrants affiliated with different themes
 merged_datatable$Breathlessness <- ifelse(grepl("Breathlessness", merged_datatable$`clahrc delivery themes proposed workstream`
                                        , ignore.case = FALSE), "1", "0")
@@ -18,16 +21,12 @@ merged_datatable$Patient <- ifelse(grepl("Patient", merged_datatable$`clahrc del
 
 
 
-Themes <- c("Breathlessness", "Frailty", "Early", "Public","Collaborative","Improvement", "Mental", "Patient") 
-Yes <- c(sum(as.integer(merged_datatable$Breathlessness)), sum(as.integer(merged_datatable$Frailty)),
+themes <- c("Breathlessness", "Frailty", "Early", "Public","Collaborative","Improvement", "Mental", "Patient") 
+number_of_registrants_by_theme <- c(sum(as.integer(merged_datatable$Breathlessness)), sum(as.integer(merged_datatable$Frailty)),
          sum(as.integer(merged_datatable$Early)) ,sum(as.integer(merged_datatable$Public)), sum(as.integer(merged_datatable$Collaborative)), 
          sum(as.integer(merged_datatable$Improvement)),
          sum(as.integer(merged_datatable$Mental)), sum(as.integer(merged_datatable$Patient)))
-         df2 <- data.frame(Themes, Yes)
          
-         require(tidyr)
-         df.long <- gather(df2, Themes)
-         colnames(df.long) <- c("Themes", "variable", "value")
+registrants_by_theme<- data.frame(themes, number_of_registrants_by_theme)
          
-         ggplot(data = df.long, aes(x = Themes, y = value, fill = variable)) +
-           geom_col(position = position_dodge()) 
+ggplot(data=registrants_by_theme,aes(x=themes,y=number_of_registrants_by_theme))+geom_col()
